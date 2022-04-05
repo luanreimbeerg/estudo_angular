@@ -1,0 +1,92 @@
+<section>
+  <div class="login">
+    <ng-container>
+      <div class="edge-div">
+        <div class="tela d-flex flex-column justify-content-center">
+          <div class="close"><button mat-button>X</button></div>
+          <div class="enter">
+            <h5 class="mb-3">Entrar</h5>
+          </div>
+          <div
+            class="d-flex flex-column align-items-center justify-content-center form"
+          >
+            <form [formGroup]="loginForm" class="form-inputs">
+              <fieldset>
+                <mat-form-field class="input-name" appearance="outline">
+                  <mat-label>CPF, CNPJ ou usuário</mat-label>
+                  <input
+                    id="login-username"
+                    matInput
+                    type="text"
+                    placeholder="CPF, CNPJ ou usuário"
+                    formControlName="user"
+                    tabindex="0"
+                    mask="CPF_CNPJ"
+                    required
+                  />
+                  <mat-error *ngIf="hasError('user', 'required', loginForm)"
+                    >Campo <b>CPF</b> obrigatório!
+                  </mat-error>
+                  <mat-error *ngIf="hasError('user', 'user', loginForm)"
+                    >Campo <b>CPF</b> obrigatório!
+                  </mat-error>
+                </mat-form-field>
+              </fieldset>
+              <fieldset>
+                <mat-form-field class="input-name" appearance="outline">
+                  <mat-label>Senha</mat-label>
+                  <input
+                    id="login-password"
+                    matInput
+                    [type]="hide ? 'password' : 'text'"
+                    placeholder="Senha"
+                    formControlName="password"
+                    tabindex="0"
+                    maxlength="10"
+                    required
+                  />
+                  <span
+                    mat-icon-button
+                    matSuffix
+                    (click)="hide = !hide"
+                    id="password-visibility"
+                    attr.aria-label="{{
+                      hide ? 'Mostrar senha' : 'Esconder senha'
+                    }}"
+                  >
+                    <mat-icon color="primary">{{
+                      hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                  </span>
+                  <mat-error *ngIf="hasError('password', 'required', loginForm)"
+                    >Campo <b>Senha</b> obrigatório!
+                  </mat-error>
+                </mat-form-field>
+              </fieldset>
+            </form>
+            <fieldset>
+              <div class="d-flex justify-content-center rounded-start">
+                <button
+                  id="login-submit"
+                  type="submit"
+                  class="custom-btn mb-3 mt-1"
+                  mat-raised-button
+                >
+
+                  Entrar
+                </button>
+              </div>
+            </fieldset>
+            <div class="remember">
+              <mat-checkbox>Lembre-se de mim</mat-checkbox>
+              <a href="">Esqueci minha senha</a>
+            </div>
+            <div class="sign-up">
+              <span>Novo por aqui? <a href="">Crie sua conta</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

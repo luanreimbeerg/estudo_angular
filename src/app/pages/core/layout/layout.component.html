@@ -1,0 +1,50 @@
+<section>
+  <mat-toolbar>
+
+      <mat-icon>book</mat-icon>
+
+    <span>DevSchool</span>
+  </mat-toolbar>
+  <ng-container>
+    <mat-sidenav-container class="side-menu-container">
+      <mat-sidenav #sidenav mode="side" opened class="sidenav-layout">
+        <mat-nav-list>
+          <a
+            mat-list-item
+            class="sub-menu-item"
+            (click)="mobile ? sidenav.toggle() : null"
+            routerLink="/menu"
+            routerLinkActive="active-route"
+          >
+            <span> <mat-icon>rocket_launch</mat-icon> Menu Principal</span>
+          </a>
+        </mat-nav-list>
+        <mat-expansion-panel class="no-shadow">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span><mat-icon>person_search</mat-icon> Gerenciamento</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-nav-list>
+            <a
+            mat-list-item
+            class="sub-menu-item"
+            (click)="mobile ? sidenav.toggle() : null"
+            routerLink="/menu/actors"
+            routerLinkActive="active-route"
+            >
+              <span><mat-icon>recent_actors</mat-icon> Alunos</span>
+            </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-sidenav>
+
+      <mat-sidenav-content class="rendered-content">
+        <h1 class="welcome">Seja Bem-Vindo</h1>
+        <p class="description">DevSchool é uma plataforma para estudo do Angular</p>
+        <ng-content></ng-content>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </ng-container>
+</section>

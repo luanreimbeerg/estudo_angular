@@ -1,0 +1,57 @@
+
+html {
+  font-size: 62.5%;
+}
+
+
+mat-toolbar {
+  width: 100%;
+  background-color: #2b3031;
+  color: white;
+
+}
+
+
+.side-menu-container {
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .sidenav-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2b3031;
+  }
+
+  span {
+    color: white;
+  }
+
+
+  .no-shadow {
+    background: #2b3031;
+  }
+
+  .rendered-content {
+    width: 100%;
+  }
+
+  .welcome {
+    font-size: 4.6rem;
+    padding: 1.9rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    padding: 1.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
